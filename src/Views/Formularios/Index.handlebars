@@ -1,0 +1,379 @@
+<div id="container">
+  <header class="page-header">
+    <div class="top-bar-container">
+      <a href="/">
+        <img src="/images/icons/back.svg" alt="Voltar" />
+      </a>
+      <img src="/images/icons/logoallrede.png" alt="Allrede" />
+    </div>
+
+    <div class="header-content">
+      <strong>Formulario Monitoria Geral</strong>
+      <p>Preecha o formulario abaixo</p>
+    </div>
+  </header>
+  <main>
+    <form
+      action="/perguntas"
+      method="post"
+      name="form-monitoria"
+      id="form-monitoria"
+    >
+      <fieldset>
+        <legend>Dados Iniciais </legend>
+        <div class="form-group-grid">
+          <div class="select-block">
+            <label for="monitor">Monitor</label>
+            <select name="monitor">
+              <option value="" selected>Selecione um opção</option>
+
+              {{#each supervisores}}
+                <option
+                  value="{{this.NOME_SUPERVISOR}}"
+                >{{this.NOME_SUPERVISOR}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+          <div class="select-block">
+            <label for="setor">Setor</label>
+            <select name="setor">
+              <option value="" selected>Selecione um opção</option>
+              {{#each setores}}
+                <option value="{{this.SETOR}}">{{this.SETOR}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="select-block">
+            <label for="colaborador">Colaborador</label>
+            <select name="colaborador">
+              <option value="" selected>Selecione um opção</option>
+              {{#each colaboradores}}
+                <option
+                  value="{{this.NOME_COLABORADOR}}"
+                >{{this.NOME_COLABORADOR}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="select-block">
+            <label for="supervisor">Supervisor</label>
+            <select name="supervisor">
+              <option value="" selected>Selecione um opção</option>
+
+              {{#each supervisores}}
+                <option
+                  value="{{this.NOME_SUPERVISOR}}"
+                >{{this.NOME_SUPERVISOR}}</option>
+              {{/each}}
+
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Dados do Atendimento</legend>
+        <div class="form-group-grid">
+          <div class="input-block">
+            <label for="protocolo">
+              Protocolo do Atendimento
+              <small>(Cole o protocolo)</small>
+            </label>
+            <input name="protocolo" type="text" id="protocolo" value="" />
+          </div>
+          <div class="input-block">
+            <label for="cod_cliente">
+              Código do Cliente
+              <small>(Cole o código do cliente)</small>
+            </label>
+            <input name="cod_cliente" type="text" id="cod_cliente" value="" />
+          </div>
+          <div class="select-block">
+            <label for="meio_atendimento">Meio de Atendimento</label>
+            <select name="meio_atendimento">
+              <option value="">Selecione uma opção</option>
+              <option value="1">Mensageria</option>
+              <option value="2">Telefonia</option>
+              <option value="3">Ambos</option>
+            </select>
+          </div>
+          <div class="input-block">
+            <label for="dt_monitoria">
+              Data de Monitoria
+              <small>(Escolha a)</small>
+            </label>
+            <input name="dt_monitoria" type="date" value="" />
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Apresentação - Script </legend>
+        <div class="select-block">
+          <label for="pergunta1">1 - SE APRESENTOU ?</label>
+          <select name="pergunta1">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta2">2 - INFORMOU O PROTOCOLO ?</label>
+          <select name="pergunta2">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta3">3 - ATUALIZOU/CONFIRMOU OS DADOS DO CLIENTE ?</label>
+          <select name="pergunta3">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sondagem</legend>
+        <div class="select-block">
+          <label for="pergunta4">4 - ENTENDEU A NECESSIDADE DO CLIENTE ?</label>
+          <select name="pergunta4">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta5">5 - MOSTROU EMPATIA COM A SITUAÇÃO DO CLIENTE ?</label>
+          <select name="pergunta5">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta6">6 - APRESENTOU INFORMAÇÕES CORRETAS AO CLIENTE
+            ?</label>
+          <select name="pergunta6">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta7">7 - DEMONSTROU SEGURANÇA AO FALAR/PASSAR
+            INFORMAÇÕES AO CLIENTE ?
+          </label>
+          <select name="pergunta7">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Resolução do Problema</legend>
+        <div class="select-block">
+          <label for="pergunta8">8 - SANOU TODAS AS DÚVIDAS DO CLIENTE ?
+          </label>
+          <select name="pergunta8">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta9">9 - FOI OFERECIDA A SOLUÇÃO MAIS ADEQUADA PARA
+            ATENDER ÀS NECESSIDADES DO CLIENTE ?
+          </label>
+          <select name="pergunta9">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta10">10 - SOLUCIONOU O PROBLEMA DO CLIENTE ?
+          </label>
+          <select name="pergunta10">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta11">11 - CASO NÃO QUAL O MOTIVO ?
+          </label>
+          <select name="pergunta11">
+            <option value="">Selecione uma opção</option>
+            <option value="NECESSIDADE DE OUTRO SETOR PARA SOLUÇÃO">NECESSIDADE
+              DE OUTRO SETOR PARA SOLUÇÃO
+            </option>
+            <option value="FALTA DE COMUNICAÇÃO DO CLIENTE">FALTA DE COMUNICAÇÃO
+              DO CLIENTE
+            </option>
+            <option value="LIGAÇÃO CAIU">LIGAÇÃO CAIU
+            </option>
+            <option value="PROBLEMAS NA LIGAÇÃO / MENSAGERIA">PROBLEMAS NA
+              LIGAÇÃO / MENSAGERIA
+            </option>
+            <option value="PROBLEMAS JÁ SOLUCIONADO SEGUNDO O CLIENTE">PROBLEMAS
+              JÁ SOLUCIONADO SEGUNDO O CLIENTE
+            </option>
+            <option value="NÃO SONDOU O SUFICIENTE O CLIENTE">NÃO SONDOU O
+              SUFICIENTE O CLIENTE
+            </option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta12">12 - HOUVE NECESSIDADE DE TRANSFERIR A LIGAÇÃO
+            PARA OUTRO SETOR PARA A RESOLUÇÃO DO PROBLEMA ?
+          </label>
+          <select name="pergunta12">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Oferta</legend>
+        <div class="select-block">
+          <label for="pergunta13">13 - OFERTOU ALGUMA PROMOÇÃO AO CLIENTE ?
+          </label>
+          <select name="pergunta13">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+            <option value="NÃO SE APLICA, PLANO ATUALIZADO">NÃO SE APLICA, PLANO
+              ATUALIZADO</option>
+            <option value="NÃO SE APLICA, SETOR NÃO REALIZA UPGRADE">NÃO SE
+              APLICA, SETOR NÃO REALIZA UPGRADE</option>
+            <option value="NÃO SE APLICA, ATENDIMENTO ">NÃO SE APLICA, TIPO DE
+              ATENDIMENTO NÃO VALIDO PARA UPGRADE</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta14">14 - DEMONSTROU CONHECIMENTO DO PRODUTO
+            OFERTADO ?
+          </label>
+          <select name="pergunta14">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+            <option value="NÃO SE APLICA">NÃO SE APLICA</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta15">15 - APRESENTOU OS BENEFICIOS E VANTAGENS DO
+            PRODUTO ?
+          </label>
+          <select name="pergunta15">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+            <option value="NÃO SE APLICA">NÃO SE APLICA</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta16">16 - ARGUMENTOU E CONTRA-ARGUMENTOU AS
+            OBJEÇÕES DO CLIENTE ?
+          </label>
+          <select name="pergunta16">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+            <option value="NÃO SE APLICA">NÃO SE APLICA</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta17">17 - FECHOU O NEGOCIO COM O CLIENTE ?
+          </label>
+          <select name="pergunta17">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+            <option value="NÃO SE APLICA">NÃO SE APLICA</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Fechamento</legend>
+        <div class="select-block">
+          <label for="pergunta18">18 - FOI MARCADO CORRETAMENTE NO SISTEMA A
+            DEMANDA DO CLIENTE?
+          </label>
+          <select name="pergunta18">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta19">19 - FOI OFERECIDA MAIS ASSISTENCIA AO FINAL
+            DO ATENDIMENTO ?
+          </label>
+          <select name="pergunta19">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta20">20 - INFORMOU NOSSOS MEIOS DE CONTATO AO
+            CLIENTE ?
+          </label>
+          <select name="pergunta20">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta21">21 - SOLICITOU AVALIAÇÃO AO FINAL ATENDIMENTO
+            ?
+          </label>
+          <select name="pergunta21">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM">SIM</option>
+            <option value="NÃO">NÃO</option>
+          </select>
+        </div>
+        <div class="select-block">
+          <label for="pergunta22">22 - O TEMPO DE INTERAÇÃO COM O CLIENTE FOI
+            ADEQUADO ? TELEFONIA 60 SEGUNDOS MENSAGERIA 120 SEGUNDOS
+          </label>
+          <select name="pergunta22">
+            <option value="">Selecione uma opção</option>
+            <option value="SIM, TMI MENOR OU IGUAL 60 SEGUNDOS NA LIGAÇÃO">SIM,
+              TMI MENOR OU IGUAL 60 SEGUNDOS NA LIGAÇÃO</option>
+            <option value="NÃO, TMI MAIOR 60 SEGUNDOS NA LIGAÇÃO">NÃO, TMI MAIOR
+              60 SEGUNDOS NA LIGAÇÃO</option>
+            <option
+              value="SIM, TMI MENOR OU IGUAL 120 SEGUNDOS NA MENSAGERIA"
+            >SIM, TMI MENOR OU IGUAL 120 SEGUNDOS NA MENSAGERIA</option>
+            <option value="NÃO, TMI MENOR 120 SEGUNDOS NA MENSAGERIA">NÃO, TMI
+              MENOR 120 SEGUNDOS NA MENSAGERIA</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Obeservações</legend>
+        <div class="textarea-block">
+          <label for="obs">Observação</label>
+          <textarea name="obs" id="obs"></textarea>
+        </div>
+      </fieldset>
+    </form>
+    <footer>
+      <p>
+        <img src="/images/icons/warning.svg" alt="Aviso importante" />
+        Importante!
+        <br />
+        Preencha todos os campos
+      </p>
+      <button type="submit" form="form-monitoria">Enviar Monitoria</button>
+    </footer>
+  </main>
+  <div class="space">a</div>
+</div>
